@@ -30,7 +30,7 @@ public class Player : entity{
             position.Y += distance;
         }
         
-        checkPosition();
+        CheckPosition();
         
         if ( Keyboard.GetState().IsKeyDown(Keys.Space))
         {

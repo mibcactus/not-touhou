@@ -9,6 +9,8 @@ public class entity
     public float speed;
     public float rotation = 0f;
     public Texture2D texture;
+    private Vector2 origin;
+    private Vector2 dest;
 
     public int screenWidth, screenHeight;
 
@@ -20,16 +22,26 @@ public class entity
         speed = newSpeed;
     }
 
-    public void setPosition(Vector2 newPosition)
+    public void setDest(Vector2 destination)
     {
-        position = newPosition;
+        origin = position;
+        dest = destination;
     }
 
-    public void AddTexture(Texture2D newTexture) {
+    public void MoveTowards(float elapsedGameTime)
+    {
+        float distance = speed * elapsedGameTime;
+        if (position != dest && position != origin) {
+            position.X += distance;
+            position.Y += distance;
+        }
+    }
+
+    public void SetTexture(Texture2D newTexture) {
         texture = newTexture;
     }
 
-    public void checkPosition()
+    public void CheckPosition()
     {
         if (position.X > screenWidth - texture.Width / 2) {
             position.X = screenWidth - texture.Width / 2;
@@ -42,5 +54,9 @@ public class entity
         } else if (position.Y < texture.Height / 2) {
             position.Y = texture.Height / 2;
         }
+        
+        // if colluded with:
+        // change colour to red/change texture
     }
+    
 }

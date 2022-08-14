@@ -42,8 +42,7 @@ public class Game1 : Game
     protected override void LoadContent()
     {
         _spriteBatch = new SpriteBatch(GraphicsDevice);
-
-        _player.AddTexture(Content.Load<Texture2D>("tim muller yoghurt"));
+        _player.SetTexture(Content.Load<Texture2D>("tim muller yoghurt"));
         
     }
 
