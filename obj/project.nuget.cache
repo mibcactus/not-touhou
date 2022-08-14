@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "Z5EPXwaWO6zN9ZBqgSCnRvYr87kBTMncCq3lCg2THbKdsM8eJF41n61tLNHZRkna2GlGZ2TzSpC5GrAkz3iZhg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Milica\\Documents\\Coding\\csharp\\nottouhou\\nottouhou.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Milica\\.nuget\\packages\\monogame.content.builder.task\\3.8.1.303\\monogame.content.builder.task.3.8.1.303.nupkg.sha512",
+    "C:\\Users\\Milica\\.nuget\\packages\\monogame.framework.desktopgl\\3.8.1.303\\monogame.framework.desktopgl.3.8.1.303.nupkg.sha512"
+  ],
+  "logs": []
+}
