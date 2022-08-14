@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Vector2 = System.Numerics.Vector2;
@@ -9,13 +10,21 @@ public class Game1 : Game
 {
     private GraphicsDeviceManager _graphics;
     private SpriteBatch _spriteBatch;
-    private Player _player = new Player();
+    private Player _player;
+    private float elapsedGameTime;
 
+    private int screenWidth;
+    private int screenHeight;
+    
     private Vector2 centre;
+    private Color[] colours = {Color.Red, Color.Purple, Color.Blue, Color.Azure, Color.Green, Color.Yellow, Color.Orange};
+    private int currentColour = 0;
 
     public Game1()
     {
         _graphics = new GraphicsDeviceManager(this);
+        screenWidth = _graphics.PreferredBackBufferWidth;
+        screenHeight = _graphics.PreferredBackBufferHeight;
         centre = new Vector2(_graphics.PreferredBackBufferWidth / 2, _graphics.PreferredBackBufferHeight / 2);
         Content.RootDirectory = "Content";
         IsMouseVisible = true;
@@ -25,8 +34,8 @@ public class Game1 : Game
     {
         // TODO: Add your initialization logic here
 
-        _player.Init(centre, 25);
-        
+        _player  = new Player(screenWidth, screenHeight, centre, 250);
+
         base.Initialize();
     }
 
@@ -34,19 +43,18 @@ public class Game1 : Game
     {
         _spriteBatch = new SpriteBatch(GraphicsDevice);
 
-        _player.Load(Content.Load<Texture2D>("tim muller yoghurt"));
-
-        // TODO: use this.Content to load your game content here
+        _player.AddTexture(Content.Load<Texture2D>("tim muller yoghurt"));
+        
     }
 
     protected override void Update(GameTime gameTime)
     {
         if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
             Exit();
-
-        // TODO: Add your update logic here
         
-        _player.GetInput();
+        elapsedGameTime = (float) gameTime.ElapsedGameTime.TotalSeconds;
+
+        _player.GetInput(elapsedGameTime);
 
         base.Update(gameTime);
     }
@@ -56,6 +64,15 @@ public class Game1 : Game
         GraphicsDevice.Clear(Color.CornflowerBlue);
 
         // TODO: Add your drawing code here
+        _spriteBatch.Begin(samplerState: SamplerState.PointClamp);
+        
+        _spriteBatch.Draw(_player.texture, _player.position, colours[currentColour]);
+        if (currentColour >= 6) {
+            currentColour = 0;
+        } else {
+            currentColour++;
+        }
+        _spriteBatch.End();
 
         base.Draw(gameTime);
     }
