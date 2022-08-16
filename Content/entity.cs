@@ -1,46 +1,38 @@
-﻿using System.Numerics;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Vector2 = System.Numerics.Vector2;
 
 namespace nottouhou.Content;
 
-public class entity
+public class entity : GraphicsManager
 {
-    public Vector2 position;
     public float speed;
     public float rotation = 0f;
-    public Texture2D texture;
-    private Vector2 origin;
-    private Vector2 dest;
+
+    private Vector2 origin, dest;
 
     public int screenWidth, screenHeight;
 
-    public entity(int newscreenWidth, int newscreenHeight, Vector2 newPosition, float newSpeed)
-    {
+    public entity(int newscreenWidth, int newscreenHeight, Vector2 newPosition, float newSpeed) {
         screenHeight = newscreenHeight;
         screenWidth = newscreenWidth;
         position = newPosition;
         speed = newSpeed;
     }
 
-    public void setDest(Vector2 destination)
-    {
+    public void setDest(Vector2 destination) {
         origin = position;
         dest = destination;
     }
 
-    public void MoveTowards(float elapsedGameTime)
-    {
+    public void MoveTowards(float elapsedGameTime) {
         float distance = speed * elapsedGameTime;
         if (position != dest && position != origin) {
             position.X += distance;
             position.Y += distance;
         }
     }
-
-    public void SetTexture(Texture2D newTexture) {
-        texture = newTexture;
-    }
-
+    
     public void CheckPosition()
     {
         if (position.X > screenWidth - texture.Width / 2) {
@@ -58,5 +50,5 @@ public class entity
         // if colluded with:
         // change colour to red/change texture
     }
-    
+
 }

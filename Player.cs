@@ -32,7 +32,7 @@ public class Player : entity{
         
         CheckPosition();
         
-        if ( Keyboard.GetState().IsKeyDown(Keys.Space))
+        if (Keyboard.GetState().IsKeyDown(Keys.Space))
         {
             Attack();
         }
