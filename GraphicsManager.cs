@@ -10,13 +10,13 @@ public class GraphicsManager
     public Vector2 position;
     private GraphicsDeviceManager _graphics;
 
-    private SpriteBatch _spriteBatch = new SpriteBatch(GraphicsDevice);
+    private SpriteBatch _spriteBatch;
 
-    public GraphicsManager()
+    public GraphicsManager(GraphicsDeviceManager g, SpriteBatch sb)
     {
-        _graphics = new GraphicsDeviceManager(this);
+        _graphics = g;
+        _spriteBatch = sb;
     }
-
 
     public void SetTexture(Texture2D newTexture) {
         texture = newTexture;

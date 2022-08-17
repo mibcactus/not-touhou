@@ -6,11 +6,12 @@ using nottouhou.Content;
 
 namespace nottouhou;
 
-public class Player : entity{
-
+public class Player : Entity{
+    public Player(int newscreenWidth, int newscreenHeight, Vector2 newPosition, float newSpeed) : base(newscreenWidth, newscreenHeight, newPosition, newSpeed) { }
     public void GetInput(float elapsedGameTime)
     {
         float distance = speed * elapsedGameTime;
+        
         if (Keyboard.GetState().IsKeyDown(Keys.A))
         {
             position.X -= distance;
@@ -44,7 +45,5 @@ public class Player : entity{
         Console.WriteLine("Attack!");
     }
 
-    public Player(int newscreenWidth, int newscreenHeight, Vector2 newPosition, float newSpeed) : base(newscreenWidth, newscreenHeight, newPosition, newSpeed)
-    {
-    }
+    
 }

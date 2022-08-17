@@ -4,16 +4,16 @@ using Vector2 = System.Numerics.Vector2;
 
 namespace nottouhou.Content;
 
-public class entity : GraphicsManager
+public class Entity : GraphicsManager
 {
-    public float speed;
+    protected float speed;
     public float rotation = 0f;
 
     private Vector2 origin, dest;
 
     public int screenWidth, screenHeight;
 
-    public entity(int newscreenWidth, int newscreenHeight, Vector2 newPosition, float newSpeed) {
+    public Entity(int newscreenWidth, int newscreenHeight, Vector2 newPosition, float newSpeed) {
         screenHeight = newscreenHeight;
         screenWidth = newscreenWidth;
         position = newPosition;
