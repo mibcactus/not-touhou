@@ -57,17 +57,18 @@ public class Game1 : Game
             timeWhenPressedDebug = DateTime.Now;
         }
 
-        if (Keyboard.GetState().IsKeyDown(Keys.G)) {
+        if (Keyboard.GetState().IsKeyDown(Keys.G) && DateTime.Now > timeWhenPressedDebug.AddSeconds(0.2)) {
             if (currentColour >= 6) {
                 currentColour = 0;
             } else {
                 currentColour++;
             }
+            timeWhenPressedDebug = DateTime.Now;
         }
         
 
-        elapsedGameTime = (float) gameTime.ElapsedGameTime.TotalSeconds;
-        _player.GetInput(elapsedGameTime);
+        //elapsedGameTime = (float) gameTime.ElapsedGameTime.TotalSeconds;
+        _player.GetInput((float) gameTime.ElapsedGameTime.TotalSeconds);
 
         base.Update(gameTime);
     }
@@ -79,11 +80,13 @@ public class Game1 : Game
         _spriteBatch.Draw(_player.texture, _player.position, colours[currentColour]);
 
         if(debug) {
-            _spriteBatch.DrawString(_font, "DEBUG", new Vector2(20,20), Color.Black);
-            for (int i = 0; i < 4; i++) {
-                _spriteBatch.DrawString(_font, debugDirections[i] + ": " + _player.currentDirections[i],
-                    new Vector2(20, 20 * (i + 2)), Color.Black);
-            }
+            _spriteBatch.DrawString(_font, "DEBUG (press r)", new Vector2(20,20), Color.Black);
+            for (int i = 0; i < 4; i++)
+                _spriteBatch.DrawString(_font, debugDirections[i] + ": " + _player.currentDirections[i], new Vector2(20, 20 * (i + 2)), Color.Black);
+            
+            _spriteBatch.DrawString(_font, "X Position: " + _player.position.X, new Vector2(20, 120) , Color.Black);
+            _spriteBatch.DrawString(_font, "Y Position: " + _player.position.Y, new Vector2(20, 140) , Color.Black);
+            _spriteBatch.DrawString(_font, "Player size: " + _player.texture.Width + " x " + _player.texture.Width, new Microsoft.Xna.Framework.Vector2(20, 180), Color.Black);
             
         }
         
