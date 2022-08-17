@@ -7,7 +7,7 @@ using nottouhou.Content;
 
 namespace nottouhou;
 
-public class Player : entity{
+public class Player : Entity{
     
     public bool[] currentDirections = new bool[4];
 

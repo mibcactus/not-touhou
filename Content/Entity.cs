@@ -4,7 +4,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace nottouhou.Content;
 
-public class entity
+public class Entity
 {
     public Vector2 position;
     protected float speed;
@@ -15,7 +15,7 @@ public class entity
 
     public int screenWidth, screenHeight;
 
-    public entity(int newscreenWidth, int newscreenHeight, Vector2 newPosition, float newSpeed)
+    public Entity(int newscreenWidth, int newscreenHeight, Vector2 newPosition, float newSpeed)
     {
         screenHeight = newscreenHeight;
         screenWidth = newscreenWidth;
