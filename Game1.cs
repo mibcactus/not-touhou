@@ -20,8 +20,13 @@ public class Game1 : Game
     private Color[] colours = {Color.Red, Color.Purple, Color.Blue, Color.Azure, Color.Green, Color.Yellow, Color.Orange};
     private int currentColour = 0;
 
-    public Game1()
-    {
+    private string[] debugDirections = new[] {"left", "right", "up", "down"};
+    private bool debug = true;
+    
+    
+    private SpriteFont _font;
+    
+    public Game1() {
         _graphics = new GraphicsDeviceManager(this);
         screenWidth = _graphics.PreferredBackBufferWidth;
         screenHeight = _graphics.PreferredBackBufferHeight;
@@ -30,24 +35,19 @@ public class Game1 : Game
         IsMouseVisible = true;
     }
 
-    protected override void Initialize()
-    {
-        // TODO: Add your initialization logic here
-
+    protected override void Initialize() {
         _player  = new Player(screenWidth, screenHeight, centre, 250);
-
         base.Initialize();
     }
 
-    protected override void LoadContent()
-    {
+    protected override void LoadContent() {
         _spriteBatch = new SpriteBatch(GraphicsDevice);
-        _player.SetTexture(Content.Load<Texture2D>("tim muller yoghurt"));
+        _font = Content.Load<SpriteFont>("file");
+        _player.SetTexture(Content.Load<Texture2D>("crab"));
         
     }
 
-    protected override void Update(GameTime gameTime)
-    {
+    protected override void Update(GameTime gameTime) {
         if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
             Exit();
         
@@ -60,16 +60,23 @@ public class Game1 : Game
 
     protected override void Draw(GameTime gameTime)
     {
-        GraphicsDevice.Clear(Color.CornflowerBlue);
-        
+        GraphicsDevice.Clear(Color.CadetBlue);
         
         _spriteBatch.Begin(samplerState: SamplerState.PointClamp);
-        
         _spriteBatch.Draw(_player.texture, _player.position, colours[currentColour]);
         if (currentColour >= 6) {
             currentColour = 0;
         } else {
             currentColour++;
+        }
+        
+        if(debug) {
+            _spriteBatch.DrawString(_font, "DEBUG", new Vector2(20,20), Color.Black);
+            for (int i = 0; i < 4; i++) {
+                _spriteBatch.DrawString(_font, debugDirections[i] + ": " + _player.currentDirections[i],
+                    new Vector2(20, 20 * (i + 2)), Color.Black);
+            }
+            
         }
         _spriteBatch.End();
 

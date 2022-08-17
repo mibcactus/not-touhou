@@ -24,3 +24,7 @@ C:\Users\Milica\Documents\Coding\csharp\nottouhou\obj\Debug\net6.0\refint\nottou
 C:\Users\Milica\Documents\Coding\csharp\nottouhou\obj\Debug\net6.0\nottouhou.pdb
 C:\Users\Milica\Documents\Coding\csharp\nottouhou\obj\Debug\net6.0\nottouhou.genruntimeconfig.cache
 C:\Users\Milica\Documents\Coding\csharp\nottouhou\obj\Debug\net6.0\ref\nottouhou.dll
+C:\Users\Milica\Documents\Coding\csharp\nottouhou\bin\Debug\net6.0\Content\crab.xnb
+C:\Users\Milica\Documents\Coding\csharp\nottouhou\bin\Debug\net6.0\Content\sky.xnb
+C:\Users\Milica\Documents\Coding\csharp\nottouhou\bin\Debug\net6.0\Content\crap.xnb
+C:\Users\Milica\Documents\Coding\csharp\nottouhou\bin\Debug\net6.0\Content\File.xnb

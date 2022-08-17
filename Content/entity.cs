@@ -1,4 +1,5 @@
-﻿using System.Numerics;
+﻿using System;
+using System.Numerics;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace nottouhou.Content;
@@ -6,8 +7,8 @@ namespace nottouhou.Content;
 public class entity
 {
     public Vector2 position;
-    public float speed;
-    public float rotation = 0f;
+    protected float speed;
+    protected float rotation = 0f;
     public Texture2D texture;
     private Vector2 origin;
     private Vector2 dest;
@@ -44,13 +45,13 @@ public class entity
     public void CheckPosition()
     {
         if (position.X > screenWidth - texture.Width / 2) {
-            position.X = screenWidth - texture.Width / 2;
+            position.X = (screenWidth - texture.Width / 2);
         } else if (position.X < texture.Width / 2) {
             position.X = texture.Width / 2;
         }
         
         if (position.Y > screenHeight- texture.Height / 2) {
-            position.Y = screenHeight- texture.Height / 2;
+            position.Y = screenHeight - (texture.Height / 2);
         } else if (position.Y < texture.Height / 2) {
             position.Y = texture.Height / 2;
         }

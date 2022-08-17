@@ -1,2 +1,6 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"C:/Users/Milica/Documents/Coding/csharp/nottouhou/Content/crab.png","C:/Users/Milica/Documents/Coding/csharp/nottouhou/Content/bin/DesktopGL/Content/crab.xnb","TextureProcessor","Texture2DContent",1822,40485,0.1643132
+"C:/Users/Milica/Documents/Coding/csharp/nottouhou/Content/crap.png","C:/Users/Milica/Documents/Coding/csharp/nottouhou/Content/bin/DesktopGL/Content/crap.xnb","TextureProcessor","Texture2DContent",7660,300645,0.1677211
+"C:/Users/Milica/Documents/Coding/csharp/nottouhou/Content/File.spritefont","C:/Users/Milica/Documents/Coding/csharp/nottouhou/Content/bin/DesktopGL/Content/File.xnb","FontDescriptionProcessor","SpriteFontContent",2084,21535,1.1961751
+"C:/Users/Milica/Documents/Coding/csharp/nottouhou/Content/sky.png","C:/Users/Milica/Documents/Coding/csharp/nottouhou/Content/bin/DesktopGL/Content/sky.xnb","TextureProcessor","Texture2DContent",2443,1048661,0.0415065
 "C:/Users/Milica/Documents/Coding/csharp/nottouhou/Content/tim muller yoghurt.png","C:/Users/Milica/Documents/Coding/csharp/nottouhou/Content/bin/DesktopGL/Content/tim muller yoghurt.xnb","TextureProcessor","Texture2DContent",23777,40485,0.1796973
