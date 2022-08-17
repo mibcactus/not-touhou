@@ -34,20 +34,13 @@ public class Player : Entity{
             position.Y += distance;
             currentDirections[3] = true;
         }
-        if (Keyboard.GetState().IsKeyDown(Keys.Space))
-            Attack();
+        
                 
         CheckPosition();
         
         
 
     }
-
-    public void Attack()
-    {
-        Console.WriteLine("Attack!");
-    }
-
     public Player(int newscreenWidth, int newscreenHeight, Vector2 newPosition, float newSpeed) : base(newscreenWidth, newscreenHeight, newPosition, newSpeed)
     {
     }

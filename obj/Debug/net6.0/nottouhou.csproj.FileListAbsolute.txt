@@ -28,3 +28,5 @@ C:\Users\Milica\Documents\Coding\csharp\nottouhou\bin\Debug\net6.0\Content\crab.
 C:\Users\Milica\Documents\Coding\csharp\nottouhou\bin\Debug\net6.0\Content\sky.xnb
 C:\Users\Milica\Documents\Coding\csharp\nottouhou\bin\Debug\net6.0\Content\crap.xnb
 C:\Users\Milica\Documents\Coding\csharp\nottouhou\bin\Debug\net6.0\Content\File.xnb
+C:\Users\Milica\Documents\Coding\csharp\nottouhou\bin\Debug\net6.0\Content\griffin.xnb
+C:\Users\Milica\Documents\Coding\csharp\nottouhou\bin\Debug\net6.0\Content\griffin2.xnb
