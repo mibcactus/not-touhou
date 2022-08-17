@@ -15,7 +15,7 @@ public class GraphicsManager
     public GraphicsManager(GraphicsDeviceManager g, SpriteBatch sb)
     {
         _graphics = g;
-        _spriteBatch = sb;
+        _spriteBatch = new SpriteBatch(GraphicsDevice);
     }
 
     public void SetTexture(Texture2D newTexture) {
